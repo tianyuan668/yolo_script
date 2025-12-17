@@ -32,7 +32,7 @@ def move_all_files(source_folder, target_folder, conflict_resolution='rename'):
                 if os.path.exists(target_path):
                     if conflict_resolution == 'overwrite':
                         # 覆盖现有文件
-                        shutil.move(source_path, target_path)
+                        shutil.copy(source_path, target_path)
                         print(f"覆盖移动: {source_path} -> {target_path}")
 
                     elif conflict_resolution == 'rename':
@@ -43,7 +43,7 @@ def move_all_files(source_folder, target_folder, conflict_resolution='rename'):
                         while os.path.exists(new_target_path):
                             new_target_path = os.path.join(target_folder, f"{base}_{counter}{ext}")
                             counter += 1
-                        shutil.move(source_path, new_target_path)
+                        shutil.copy(source_path, new_target_path)
                         print(f"重命名移动: {source_path} -> {new_target_path}")
 
                     elif conflict_resolution == 'skip':
@@ -52,7 +52,7 @@ def move_all_files(source_folder, target_folder, conflict_resolution='rename'):
                         continue
                 else:
                     # 直接移动文件
-                    shutil.move(source_path, target_path)
+                    shutil.copy(source_path, target_path)
                     print(f"移动: {source_path} -> {target_path}")
 
                 moved_count += 1
@@ -84,7 +84,7 @@ def move_files_with_structure(source_folder, target_folder):
             os.makedirs(os.path.dirname(target_path), exist_ok=True)
 
             try:
-                shutil.move(source_path, target_path)
+                shutil.copy(source_path, target_path)
                 print(f"移动: {source_path} -> {target_path}")
                 moved_count += 1
             except Exception as e:
@@ -95,8 +95,8 @@ def move_files_with_structure(source_folder, target_folder):
 
 if __name__ == "__main__":
     # 设置你的文件夹路径
-    source_folder = r"E:\data\已标注\销钉有无-已标注-王艳-12.8"  # 替换为你的源文件夹路径
-    target_folder = r"E:\data\已标注\销钉有无"  # 替换为你的目标文件夹路径
+    source_folder = r"E:\data\新建文件夹 (2)\气孔"  # 替换为你的源文件夹路径
+    target_folder = r"E:\data\气孔"  # 替换为你的目标文件夹路径
 
     # 使用方法1: 将所有文件移动到同一文件夹
     print("=== 方法1: 合并所有文件到同一文件夹 ===")

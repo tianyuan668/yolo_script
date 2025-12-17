@@ -488,9 +488,9 @@ class YOLOv8ONNXInference:
 
 def main():
     # 配置参数
-    onnx_model_path = r"E:\data\前排温度传感器\best.onnx"  # 替换为您的ONNX模型路径
-    input_folder = r"E:\data\2025年12月9日存图"  # 替换为您的图像文件夹路径（可以包含中文）
-    output_folder = r"E:\data\2025年12月9日存图—result"  # 输出文件夹路径
+    onnx_model_path = r"E:\data\正面的四个侧面_缺陷检测\best.onnx"  # 替换为您的ONNX模型路径
+    input_folder = r"E:\data\123"  # 替换为您的图像文件夹路径（可以包含中文）
+    output_folder = r"E:\data\123—result"  # 输出文件夹路径
     # class_names_path = "coco.names"  # 替换为您的类别名称文件路径 (可选)#
 
     # 设置Python环境以支持中文

@@ -71,8 +71,8 @@ def copy_paired_files(source_folder, target_folder, image_exts=('.jpg', '.jpeg',
 # === 使用示例 ===
 if __name__ == "__main__":
     # 请修改为您的实际路径
-    source_directory = r"E:\data\组合大灯饰盖"  # 替换为你的源文件夹路径
-    target_directory = r"E:\data\下格栅_new"  # 替换为你的目标文件夹路径
+    source_directory = r"E:\data\已标注\正面的四个侧面_缺陷检测"  # 替换为你的源文件夹路径
+    target_directory = r"E:\data\已标注\正面的四个侧面_缺陷检测_"  # 替换为你的目标文件夹路径
 
     # 执行复制
     copy_paired_files(source_directory, target_directory)

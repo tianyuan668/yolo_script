@@ -218,14 +218,29 @@ class PolygonToYOLOConverter:
 
 
 if __name__ == "__main__":
-    # # 直接在代码中设置参数
-    #json_dir = r"E:\data\temp"  #输入路径
-    temp_dir = r"E:\data\2025年12月9日存图" #临时路径
-    output_folder = r"E:\data\前排温度传感器"  # 替换为您想要的输出路径
-    #
+    # 直接在代码中设置参数
+    json_dir = r"E:\data\气孔"  #输入路径
+    temp_dir = r"D:\Users\Win10\Desktop\暂存\牌照美纹纸-65张json" #临时路径
+    output_folder = r"E:\data\气孔_1217"  # 替换为您想要的输出路径
+    os.makedirs(temp_dir, exist_ok=True)
+    img_width = 2448
+    img_height = 2048
+
+    # 定义类别映射（根据实际标注修改）
+    class_mapping = {
+        "0": 0,
+        '1':1,
+        "2":2,
+    }
+
+    converter = PolygonToYOLOConverter(class_mapping)
+    converter.batch_convert(json_dir, temp_dir, img_width, img_height)
+
+
+    # temp_dir = r"D:\Users\Win10\Desktop\youqianmen_mubiao\test"
 
     image_folder = temp_dir  # 替换为您的图片文件夹路径
-    label_folder = temp_dir # 替换为您的标签文件夹路径
+    label_folder = temp_dir  # 替换为您的标签文件夹路径
 
 
 
@@ -237,4 +252,7 @@ if __name__ == "__main__":
         train_ratio=0.8,  # 80%训练，20%验证
         copy_files=True  # True: 复制文件（推荐）；False: 移动文件
     )
-    #shutil.rmtree(temp_dir)
+    shutil.rmtree(temp_dir)
+
+
+

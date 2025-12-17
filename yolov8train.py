@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     # 开始训练
     results = model.train(
-        data=r'E:\data\polie_yolo/dataset.yaml',  # 数据集配置文件路径[1,3](@ref)
+        data=r'E:\data\正面的四个侧面/dataset.yaml',  # 数据集配置文件路径[1,3](@ref)
         epochs=300,  # 训练轮次
         imgsz=1024,  # 输入图像尺寸
         batch=16,  # 批量大小（根据GPU显存调整）[5,8](@ref)
